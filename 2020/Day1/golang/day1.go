@@ -8,6 +8,7 @@ import (
     "os"
     "strconv"
     "sort"
+    "flag"
 )
 
 func readLines(path string) ([]int, error) {
@@ -70,11 +71,14 @@ func getSumPair(elements []int, search int) (int, int) {
 }
 
 func main() {
-	lines, _ := readLines("../input.txt")
+    var search int
+    flag.IntVar(&search ,"search", 2020, "search sum integer.")
+    flag.Parse()
 
+	lines, _ := readLines("../input.txt")
     sort.Ints(lines)
 
-    num1, num2 := getSumPair(lines, 2020)
+    num1, num2 := getSumPair(lines, search)
 
     if (num1 != -1 && num2 != -1){
         fmt.Print("\n\n")
