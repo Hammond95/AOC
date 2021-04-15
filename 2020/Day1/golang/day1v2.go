@@ -39,8 +39,8 @@ func getSumPair(elements []int, search int) (int, int) {
         posMap[element] = i
     }
 
-    var num1 int
-    var num2 int
+    var num1 int = -1 
+    var num2 int = -1
     for _, element := range elements {
         num2 = search - element
         _, ok := posMap[num2]
