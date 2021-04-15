@@ -31,11 +31,16 @@ def get_sum_pair(elements, search) -> tuple:
     
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('search', metavar='search', type=int, help='The sum integer to find')
+    args = parser.parse_args()
+
     input_lines = read_input(os.path.join(os.path.dirname(__file__),"../input.txt"))
     casted = [ int(x.strip()) for x in input_lines ]
     ordered = sorted(casted)
 
-    num1, num2 = get_sum_pair(ordered, 2020)
+    num1, num2 = get_sum_pair(ordered, args.search)
 
     if num1 and num2:
         print("\n\n")
