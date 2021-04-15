@@ -4,12 +4,12 @@ def read_input(filename):
     return open(filename).readlines()
 
 def get_sum_pair(elements, search) -> tuple:
-    posMap = dict(zip(elements, range(0, len(elements))))
+    pos_map = dict(zip(elements, range(0, len(elements))))
 
     num1 = None
     for element in elements:
         num2 = search - element
-        if posMap.get(num2):
+        if pos_map.get(num2):
             num1 = element
             break
     
